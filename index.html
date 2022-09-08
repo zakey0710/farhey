@@ -172,7 +172,7 @@
 				this.h = window.innerHeight;
 				canvas.setAttribute("width", this.w);
 				canvas.setAttribute("height", this.h);
-				this.context = canvas.getContext("3d");
+				this.context = canvas.getContext("2d");
 			}
 			create()
 			{
@@ -201,12 +201,6 @@
 		{
 			new Board(Love).run();
 		}
-		
-// 		window.onload(function()
-// 		{
-// 			new Board(Love).run();
-// 		}, 125*1000);
-		
 	</script>
 	</body>
 </html>

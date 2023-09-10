@@ -1,207 +1,40 @@
-<!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<title>Farah :)</title>
-	<style type="text/css">
-		@font-face {
-			font-family: digit;
-			src: url('digital-7_mono.ttf') format("truetype");
-		}
-	</style>
-	<link href="css/default.css" type="text/css" rel="stylesheet">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/garden.js"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology Letter</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-<body style="background-color: white">
-	<canvas id="cavs" style="position:fixed; z-index:-1;"></canvas>
-	<div id="mainDiv">
-		<div id="content">
-			<div id="code">
-				<span class="comments">/**</span><br />
-				<span class="space"/><span class="comments">* We met first time in Starbucks Bogor on February 20th 2022,</span><br />
-				<span class="space"/><span class="comments">* so I write some code for you :), Far.</span><br />
-				<span class="space"/><span class="comments">*/</span><br />
-				Boy i = <span class="keyword">new</span> Boy(<span class="string">"Zaqi"</span>);<br />
-				Girl u = <span class="keyword">new</span> Girl(<span class="string">"Farah"</span>);<br />
-				<span class="comments">// May 21st 2022, We met for the second time [Watching Dr. Strange together] & [Eating together in MCD until late]. </span>
-				<br />i.happy&&u.happy;<br />	
-				<span class="comments">// Since then, I missed u every day.</span>
-				<br />i.miss(u);<br />
-				<span class="comments">// August 3rd-6th 2022, We met for the third time, at that time I was really happy to meet you.</span>
-				<br /><span class="comments">// Watching the Uncle Roger Show together.</span>
-				<br /><span class="comments">// Watching the Pengabdi Setan 2 at Kelapa Gading Mall and playing the game at the timezone :).</span>
-				<br /><span class="comments">// Walking together at the PIK & playing a board game together were the most exciting activities with you.</span>
-				<br /><span class="comments">// At that time, I really wanted to say something, but you looked so tired in the car :( ......</span>
-				<br />i.sad&&u.sad;<br />
-				<span class="comments">// I really miss u every day. :(</span>
-				<br />i.wantToMeet(u);<br />
-				<span class="comments">// Sept 3rd 2022, We met for the fourth time, we went to Ragunan Zoo and Grand Indonesia Plaza.</span>
-				<br /><span class="comments">// At Citos Mall parking area, I wanted to confess about my feeling actually, but if said at that time..... .</span>
-				<br /><span class="comments">// Probably I would miss the train huhuhu.</span>
-				<br />i.wantToSorryfor(u);<br />
-				<span class="comments">// Today, Sept 10th 2022, I want to confess my feeling about U, Far.</span><br />
-				<span class="keyword">boolean</span> isHesitate = <span class="keyword">true</span>;
-				<br /><span class="keyword">while</span> (isHesitate) {<br />
-				<span class="placeholder"/>i.love(u);<br />
-				<span class="placeholder"/><span class="comments">// I think it is an important decision</span>
-				<br />
-				<span class="placeholder"/><span class="comments">// and you should think it over.</span><br />
-				<span class="placeholder"/>isHesitate = u.thinkOver();<br />
-				}<br />
-				<span class="comments">// After all of these, do you want to become my girlfriend????? ♥♥♥♥♥.</span><br />
-				i.love(u);<br />
-				i.wantTobeHappyWith(u);<br />				
-                                Made by <a href='https://github.com/zakey0710'> Zaq |</a> 2022.<br />
-			</div>
-			
-			<div id="loveHeart">
-				<canvas id="garden"></canvas>
-				<div id="words">
-					<div id="messages">
-						Far, I have fallen in love with you for
-						<div id="elapseClock"></div>
-					</div>
-					<div id="loveu">
-						Love u forever and ever.<br/>
-						<div class="signature"　href='https://github.com/zakey0710'>- ザキ</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-<!-- 		<div id="copyright">
-			Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />
-			Copyright © 2011 <a href='http://hackerzhou.me'>hackerzhou.me</a> 2009-2011<br />
-			Modified by <a href='https://i-square.github.io'>i_square | 平方君</a> 2017
-			Made by <a href='https://github.com/zakey0710'> Zaq |</a> 2022
-		</div> -->
-		
-	</div>
-	
-	<script type="text/javascript">
-	
-		var offsetX = $("#loveHeart").width() / 2;
-		var offsetY = $("#loveHeart").height() / 2 - 55;
-		var together = new Date();
-		together.setFullYear(2022, 2, 20); <!--这里的月份要填写实际月份减1-->
-		together.setHours(15);
-		together.setMinutes(0);
-		together.setSeconds(0);
-		together.setMilliseconds(0);
-		
-		if (!document.createElement('canvas').getContext) {
-			var msg = document.createElement("div");
-			msg.id = "errorMsg";
-			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
-			document.body.appendChild(msg);
-			$("#code").css("display", "none")
-			$("#copyright").css("position", "absolute");
-			$("#copyright").css("bottom", "10px");
-		    document.execCommand("stop");
-		} else {
-			setTimeout(function () {
-				startHeartAnimation();
-			}, 125*1000);
-
-			timeElapse(together);
-			setInterval(function () {
-				timeElapse(together);
-			}, 1000);
-
-			adjustCodePosition();
-			$("#code").typewriter();
-		}
-	</script>
-	
-	<script type="text/javascript">
-		class Love
-		{
-			constructor(board)
-			{
-				this.board = board;
-				this.init();
-			}
-			
-			init() 
-			{
-				this.maxScale = (Math.random() * 3.2 + 1.2) * this.board.w / 521;
-				this.curScale = 1.2 * this.board.w / 521;
-				this.x = Math.floor(Math.random() * this.board.w - 40);
-				this.y = Math.floor(this.board.h - Math.random() * 200);
-				this.ColR = Math.floor(Math.random() * 255);
-				this.ColG = Math.floor(Math.random() * 255);
-				this.ColB = Math.floor(Math.random() * 255);
-				this.alpha = Math.random() * 0.2 + 0.8;
-				this.vector = Math.random() * 2 + 1.2;
-			}
-			
-			draw()
-			{
-				if(this.alpha < 0.01) this.init();
-				if(this.curScale < this.maxScale) this.curScale += 0.3;
-				const x = this.x;
-				const y = this.y;
-				const s = this.curScale;
-				const ctx = this.board.context; 
-				ctx.fillStyle = "rgba(" + this.ColR + "," + this.ColG + "," + this.ColB + "," + this.alpha + ")";
-				ctx.shadowBlur = 10;
-				ctx.shadowColor = "rgb(" + this.ColR + "," + this.ColG + "," + this.ColB + ")";
-				ctx.beginPath();
-				ctx.bezierCurveTo( x + 2.5*s, y + 2.5*s, x + 2.0*s, y, x, y );
-				ctx.bezierCurveTo( x - 3.0*s, y, x - 3.0*s, y + 3.5*s,x - 3.0*s,y + 3.5*s );
-				ctx.bezierCurveTo( x - 3.0*s, y + 5.5*s, x - 1.0*s, y + 7.7*s, x + 2.5*s, y + 9.5*s );
-				ctx.bezierCurveTo( x + 6.0*s, y + 7.7*s, x + 8.0*s, y + 5.5*s, x + 8.0*s, y + 3.5*s );
-				ctx.bezierCurveTo( x + 8.0*s, y + 3.5*s, x + 8.0*s, y, x + 5.0*s, y );
-				ctx.bezierCurveTo( x + 3.5*s, y, x + 2.5*s, y + 2.5*s, x + 2.5*s, y + 2.5*s );
-				ctx.fill();ctx.closePath();
-				this.y -= this.vector;
-				this.alpha -= (this.vector / this.board.h);
-			}
-		}
-		
-		class Board
-		{
-			constructor(Shape)
-			{
-				this.Shape = Shape;
-				this.shapes = [];
-				const canvas = document.getElementById("cavs");
-				this.w = window.innerWidth;
-				this.h = window.innerHeight;
-				canvas.setAttribute("width", this.w);
-				canvas.setAttribute("height", this.h);
-				this.context = canvas.getContext("2d");
-			}
-			create()
-			{
-				for (let i = 0; i < this.w / 59; i++)
-				{
-					this.shapes.push(new this.Shape(this));
-				}
-			}
-			draw()
-			{
-				this.context.clearRect(0, 0, this.w, this.h);
-				for (let key in this.shapes)
-				{
-					this.shapes[key].draw();
-				}
-				window.requestAnimationFrame(this.draw.bind(this));       
-			}
-			run()
-			{
-				this.create();
-				this.draw();
-			}
-		}
-		
-		window.onload = function()
-		{
-			new Board(Love).run();
-		}
-	</script>
-	</body>
+<body>
+    <div class="container">
+        <h1>Apology Letter</h1>
+        <div id="page1" class="page">
+            <p>Dear Farah,</p>
+            <p>I update this page on 2023/09/10, if you ever read this messages someday in the future, I hope you want to read the messages until it finishes, I guarantee I don't want to make you become baffle, confused, or anything... and it's not about rekindling any moments between us in the past, I just want apologize sincerely for entire my mistakes, because I think when we met for the last time in the Delapan Padi (Bandung).. I was so frozen, sudden death, couldn't talk properly even I already knew that it was our last moment, so that's why I made this </p> 
+            <p>I hope this message finds you well. I wanted to take a moment to express my sincerest apologies for the way things ended between us. Looking back, I realize that I made mistakes and hurt you, and for that, I am truly sorry.</p>       
+        </div>
+        <div id="page2" class="page">
+            <p>I want you to be happy, no matter what that means.. I want you to find someone who will treat you with all the love you really deserve.. I want you to meet someone who will see you always everyday with love, take care of you with right with everything, someone who will accompany you and you are happy with him for entire your life, someonw who is better, loving man, kind man that really is destined to accompany you till Jannah.</p>
+            <p>I realize that person is not me.</p>
+        </div>
+        <div id="page3" class="page">
+            <p>I don't want to rekindle any past moments, and I also am going to be genuinely happy to hear that you've found happiness with someone new. Your happiness means a lot to me, and I genuinely hope for the best for you in your new relationship.</p>
+            <p>This letter is not about trying to change the past, but rather about acknowledging my mistakes and expressing my remorse. I've learned a lot from our time together, and I am working on becoming a better person for myself and for those around me.</p>
+            <p>P.S: I want to be like you that have a highly emotional intelligence, that's why now I already joined some of treatments by professional help/therapist/psychology... it's really life-changing, step-by-step I'm able to understand myself better with my traits/toxic traits.</p>
+        </div>
+        <div id="page4" class="page">
+            <p>Once again, I am sorry for any pain I may have caused you, and I hope that you can find it in your heart to forgive me. I wish you all the happiness and love in the world.</p>
+            <p>Sincerely,</p>
+            <p>Zaqi</p>
+        </div>
+        <div class="pagination">
+            <a href="#" onclick="showPage(1)" id="page1Link">1</a>
+            <a href="#" onclick="showPage(2)" id="page2Link">2</a>
+            <a href="#" onclick="showPage(3)" id="page3Link">3</a>
+            <a href="#" onclick="showPage(4)" id="page3Link">4</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>

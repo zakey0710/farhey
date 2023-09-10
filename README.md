@@ -1,2 +1,2 @@
 # farhey
-Digital love confession :)
+Digital letter of apologizing :)
